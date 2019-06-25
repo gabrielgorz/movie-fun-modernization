@@ -54,3 +54,23 @@ dependencies {
 
     testCompile "junit:junit:4.12"
 }
+
+task pushCf(type:Exec){
+    commandLine 'cf', 'push', 'movie-fun-app', '-p', 'build/libs/moviefun-1.1.0-SNAPSHOT.war', '--random-route'
+}
+
+task smokeTest (type:Exec) {
+
+    println 'curl -i http://localhost:8080/'
+    commandLine 'curl', '-i', 'http://localhost:8080/'
+    println 'curl -i http://localhost:8080/setup'
+    commandLine 'curl', '-i', 'http://localhost:8080/setup'
+    println 'curl -i http://localhost:8080/moviefun'
+    commandLine 'curl', '-i', 'http://localhost:8080/moviefun'
+
+    standardOutput = new ByteArrayOutputStream()
+
+    ext.output = {
+        return standardOutput.toString()
+    }
+}

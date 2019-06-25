@@ -18,8 +18,6 @@ package org.superbiz.moviefun.movies;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-import org.superbiz.moviefun.movies.Movie;
-import org.superbiz.moviefun.movies.MoviesBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

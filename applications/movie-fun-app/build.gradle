@@ -25,8 +25,8 @@ dependencies {
     compile "org.apache.geronimo.specs:geronimo-osgi-locator:1.1"
     compile "org.apache.geronimo.components:geronimo-jaspi:2.0.0"
 
-    compile project(":components:movies")
-    compile project(":components:albums")
+    compile project(":components:movies-api")
+    compile project(":components:albums-api")
 
     testCompile "junit:junit:4.12"
 }

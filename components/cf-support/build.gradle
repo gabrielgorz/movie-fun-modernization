@@ -1,0 +1,5 @@
+apply from: "../../java.gradle"
+
+dependencies {
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.7.0"
+}

@@ -15,6 +15,8 @@ package org.superbiz.moviefun.albums; /**
  * limitations under the License.
  */
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,13 +26,16 @@ import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 @Repository
-public class AlbumsBean {
+public class AlbumsRepository {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Transactional
     public void addAlbum(Album album) {
+        logger.debug("AlbumsRepository - Creating album with artist {}, and title {}", album.getArtist(), album.getTitle());
         entityManager.persist(album);
     }
 

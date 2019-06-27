@@ -54,6 +54,7 @@
       </a> <a class="brand" href="#">Moviefun</a>
 
       <form class="navbar-form pull-right">
+        <sec:csrfInput />
         <select name="field">
           <option value="title">Title</option>
           <option value="director">Director</option>
@@ -73,6 +74,7 @@
 
   <form class="movie-input-form form-inline" action="moviefun"
         method="post">
+    <sec:csrfInput />
     <p>Add Movie</p>
     <input type="text" name="title" placeholder="Title" size="29"/> <input
       type="text" name="director" placeholder="Director" size="17"/> <input

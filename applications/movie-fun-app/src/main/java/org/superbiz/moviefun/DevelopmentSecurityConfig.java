@@ -20,8 +20,8 @@ public class DevelopmentSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable();;
     }
 
-    @LoadBalanced
     @Bean
+    @LoadBalanced
     public RestOperations restOperations() {
         return new RestTemplate();
     }

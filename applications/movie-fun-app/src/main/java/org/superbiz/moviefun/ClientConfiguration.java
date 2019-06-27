@@ -10,16 +10,13 @@ import org.superbiz.moviefun.moviesapi.MoviesClient;
 @Configuration
 public class ClientConfiguration {
 
-    @Value("${albums.url}") String albumsUrl;
-    @Value("${movies.url}") String moviesUrl;
-
     @Bean
     public AlbumsClient albumsClient(RestOperations restOperations) {
-        return new AlbumsClient(albumsUrl, restOperations);
+        return new AlbumsClient("//album-service/albums", restOperations);
     }
 
     @Bean
     public MoviesClient moviesClient(RestOperations restOperations) {
-        return new MoviesClient(moviesUrl, restOperations);
+        return new MoviesClient("//movie-service/movies", restOperations);
     }
 }
